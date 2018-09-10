@@ -1,0 +1,53 @@
+/* Roomslider Css*/
+.tripfacts {
+	.t_facts_wrap {
+		padding: 0 95px;
+
+		.t_facts {
+			strong {
+				@include add-border( 1px, $dark-color, all );
+				border-color: darken( $dark-color, 3.5% );
+				height: 102px;
+				width: 102px;
+				font-size: 16px;
+				font-weight: 700;
+				display: inline-block;
+				margin-bottom: 10px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				text-align: center;
+				justify-content: center;
+				margin: 10px auto;
+				transition: ease 0.5s;
+				color: darken( $dark-color, 3.5% );
+			}
+
+			p {
+				font-size: 16px;
+				text-transform: uppercase;
+				font-weight: 300;
+				color: darken( $dark-color, 8.4% );
+			}
+
+			&:hover {
+				strong {
+					border-color: $primary-color;
+					background: $primary-color;
+					color: #fff;
+					transition: ease 0.5s;
+				}
+			}
+		}	
+	}
+	
+}
+
+/* Responsive Css */
+@media only screen and ( max-width: 767px ) {
+	.tripfacts {
+		.t_facts_wrap {
+			padding: 0;
+		}
+	}
+}

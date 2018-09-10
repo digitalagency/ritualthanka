@@ -1,0 +1,162 @@
+/* Roomslider Css*/
+.blogsingle {
+	figure {
+		margin-bottom: 30px;
+	}
+
+	figcaption {
+		h1 { 
+			@include add-border( 1px, $light-color, bottom );
+			border-color: lighten( $light-color, 29.8% );
+			font-weight: 700;
+			padding-bottom: 30px;
+			color: darken( $dark-color, 11% );
+			margin-bottom: 30px;
+			font-family: 'Josefin Sans', sans-serif;
+		}
+
+		p {
+			color: darken( $dark-color, 11% );
+		}
+
+		.post_date {
+			@include add-border( 1px, $light-color, top );
+			@include add-border( 1px, $light-color, bottom );
+			border-color: lighten( $light-color, 1% );
+			padding: 19px 0;
+			margin-bottom: 30px;
+
+			.post_social {
+				li {
+					display: inline-block;
+					margin-right: 26px;
+
+					&:last-child {
+						margin-right: 0;
+					}
+
+					a {
+						color: #000;
+
+						&:hover {
+							color: $primary-color;
+						}
+					}
+				}
+			}
+
+			span {
+				color: lighten( $light-color, 1% );
+
+				i {
+					margin-right: 5px;
+				}
+			}
+		}
+
+		.reply {
+			.client_reply {
+				@include add-border( 1px, $light-color, bottom );
+				border-color: lighten( $light-color, 29.8% );
+				padding-bottom: 30px;
+				margin-bottom: 30px;
+
+				&:last-child {
+					border: none;
+				}
+
+				.reply_head {
+					margin-bottom: 15px;
+
+					strong {
+						display: inline-block;
+						color: #000;
+
+						i {
+							margin-right: 15px;
+						}
+
+						span {
+							@include add-border( 1px, $light-color, left );
+							border-color: lighten( $light-color, 1% );
+							color: lighten( $light-color, 1% );
+							padding-left: 15px;
+							display: inline-block;
+							margin-left: 15px;
+							font-weight: 400;
+						}
+					}
+
+					.btn-secondary {
+						height: 25px;
+						line-height: 28px;
+						padding: 0 21px;
+						font-size: 15px;
+						border-radius: 5px;
+						color: $primary-color;
+						margin-top: 0;
+
+						&:hover {
+							background: $primary-color;
+							color: #fff;
+						}
+					}
+				}
+
+				> p {
+					padding-left: 35px;
+				}
+
+				.admin_reply {
+					background-color: lighten( $light-color, 45.5% );
+					padding: 15px;
+					margin-left: 35px;
+				}
+			}
+		}
+	}
+}
+
+/* Responsive Css */
+@media only screen and ( max-width: 767px ) {
+	.blogsingle {
+		figcaption {
+			h1 {
+				font-size: 15px;
+				padding-bottom: 15px;
+				margin-bottom: 15px;
+			}
+		}
+	}
+}
+
+@media only screen and ( max-width: 575px ) {
+	.blogsingle {
+		figcaption {
+			.reply {
+				.client_reply {
+					.reply_head {
+						strong {
+							i {
+								margin-right: 5px;
+							}
+
+							span {
+								padding-left: 5px;
+								margin-left: 5px;
+							}
+						}
+					}
+
+					> p {
+						padding-left: 0;
+					}
+
+					.admin_reply {
+						margin-left: 0;
+					}
+				}
+			}
+		}
+	}
+}

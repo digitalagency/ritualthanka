@@ -1,0 +1,28 @@
+.productcategory .grid .grid-item figure,
+.featureproduct .grid .grid-item figure,
+.productslide .slick-item figure,
+.blog_section figure,
+.news_section figure,
+.navbar-nav img
+{cursor:pointer}
+.hidden{display:none}
+
+.orderpage .orderdetail{float: right; font-weight: 600; }
+.orderpage .orderstatus{float: right; font-weight: 600; padding:5px; border: 1px solid #ccc; color: #fff}
+
+.orderpage .pending{background-color: #dd4b39}
+.orderpage .queue{background-color: #f39c12 }
+.orderpage .success{background-color: #00a65a }
+
+
+.orderpage .orderlist{margin-bottom: 10px;}
+@media (min-width: 360px) and (max-width: 769px) {
+    .productcategory .grid .grid-item figure a span{
+        text-transform: none;
+        font-size: 7px;
+    }
+
+    .single_product .detail_product .sp_right {
+	    margin-top: 20px;
+	}
+}

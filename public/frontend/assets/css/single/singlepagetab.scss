@@ -1,0 +1,309 @@
+/* innerbanner-block Css */
+.singlepage_tab {
+	.nav-tabs-dropdown {
+		display: none;
+		color: #fff;
+		position: relative;
+		text-align: left;
+
+		&:hover {
+			&:before,
+			&:focus {
+				animation-name: inherit;
+			}
+		}
+
+		&:before {
+			content: '\f107';
+			font-family: fontawesome;
+			position: absolute;
+			right: 30px;
+			top: 0;
+			border: none;
+			left: auto;
+		}
+	}
+
+	#myTab {
+		border-radius: 0;
+
+		.nav-item {
+			flex: 1;
+			text-align: center;
+			border-radius: 0;
+			background: #e9e9e9;
+
+			.nav-link {
+				color: darken( $light-color, 3.5% );
+				border-radius: 0;
+				padding: 15px 0;
+				font-size: 18px;
+				text-transform: uppercase;
+				border: none;
+
+				&:hover {
+					position: relative;
+					z-index: 2;
+					color: $primary-color;
+					background-color: #f3f6f8;
+					border: none;
+
+					&:after {
+						content: '';
+						position: absolute;
+						top: 0;
+						left: 0;
+						display: block;
+						z-index: -1;
+					}
+				}
+			}
+
+			.active {
+				position: relative;
+				z-index: 2;
+				color: $primary-color;
+				background-color: #f3f6f8;
+				border: none;
+
+				&:after {
+					@include add-border( 4px, $primary-color, bottom );
+					content: '';
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					display: block;
+					z-index: -1;
+				}
+
+				&:before {
+					@include add-border(8px, $primary-color, top );
+					@include add-border(8px, transparent, left );
+					@include add-border(8px, transparent, right );
+					content: '';
+					height: 8px;
+					width: 8px;
+					position: absolute;
+					right: 0;
+					left: 0;
+					margin: auto;
+					bottom: -8px;
+				}
+			}
+		}
+	}
+
+	.tab-content {
+		@include add-border( 1px, #E9E9E9, all )
+		padding: 20px;
+		position: relative;
+		background: #fff;
+		border-top: none;
+		margin-bottom: 30px;
+
+		.tab-pane {
+			li {
+				color: darken( $light-color, 10% );
+				margin-bottom: 20px;
+				position: relative;
+			}
+
+			.outline_itinerary {
+				li {
+					padding-left: 65px;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+
+					span {
+						color: $primary-color;
+						font-size: 18px;
+						display: inline-block;
+						position: absolute;
+						left: 0;
+					}
+				}
+			}
+
+			.itinerary_list {
+				li {
+					margin-bottom: 20px;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+
+					span {
+						color: $primary-color;
+						font-size: 18px;
+						margin-bottom: 10px;
+						display: block;
+						text-transform: uppercase;
+
+						em {
+							float: right;
+							font-style: normal;
+						}
+					}
+
+					p {
+						background-color: lighten( $light-color, 42.8% );
+						padding: 10px;
+						color: darken( $light-color, 3.5% );
+						margin-bottom: 0;
+					}
+				}
+			}
+
+			.price_incl {
+				li {
+					padding: 0 20px 0 25px;
+					font-size: 18px;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+
+					&:after {
+						content: '\f00c';
+						font-family: fontawesome;
+						position: absolute;
+						right: 0;
+						top: 0;
+						color: #54cf3d;
+					}
+				}
+			}
+
+			.price_excl {
+				li {
+					&:after {
+						content: '\f00d';
+						color: #f50f38;
+					}
+				}
+			}
+
+			ol {
+				li {
+					counter-increment: list;
+					list-style-type: none;
+					position: relative;
+
+					&:before {
+						color: $primary-color;
+						content: counter( list ) ".";
+						left:0;
+						position: absolute;
+					}
+				}
+			}
+		}
+	}
+
+	.btns {
+		.btn {
+			flex: 1;
+			margin:0 30px 0 0;
+			padding: 0 10px;
+			display: block;
+			border-radius: 5px;
+			font-size: 18px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			i {
+				margin-right: 15px;
+			}
+		}
+
+		.btn-default {
+			background: $base-font-color;
+			color: set-text-color( $base-font-color );
+
+			&:before {
+				border-color: $base-font-color;
+			}
+		}
+
+		.btn-primary {
+			color: #fff;
+		}
+	}
+}
+
+/* Responsive Css */
+@media screen and (min-width: 769px) {
+	.singlepage_tab {
+		#myTab {
+			display: flex !important;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.singlepage_tab {
+		.nav-tabs-dropdown {
+			display: block;
+		}
+
+		#myTab {
+			display: none;
+			margin-right: 0;
+			flex-direction: column;
+
+			.nav-item {
+				@include add-border( 1px, $light-color, bottom );
+				text-align: left;
+
+				&:first-child .active {
+					border-left: none;
+				}
+
+				.nav-link {
+					border-right: none;
+					padding-left: 15px;
+				}
+
+				.active {
+					color: $primary-color;
+
+					&:after,
+					&:before {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.singlepage_tab {
+		.tab-content {
+			.tab-pane {
+				.itinerary_list {
+					li {
+						span {
+							font-size: 14px;
+
+							em {
+								float: none;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.btns {
+			.btn {
+				margin: 0 0 15px;
+			}
+		}
+	}
+}

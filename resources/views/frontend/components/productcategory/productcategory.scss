@@ -1,0 +1,79 @@
+/* Testimonial page */
+.productcategory {
+	.grid {
+		.grid-item {
+			display: inline-block;
+			margin-bottom: 30px;
+
+			figure {
+				position: relative;
+				display: flex;
+				justify-content: center;
+
+				&:hover {
+					figcaption {
+						transform: scale( 1 );
+						transition: 0.5s;
+					}
+
+					a {
+						background: $primary-color;
+						color: #fff;
+						transition: 0.5s;
+					}
+				}
+
+				figcaption {
+					background: rgba( 0, 0, 0, 0.7 );
+					position: absolute;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					text-align: center;
+					display: flex;
+					flex-direction: column;
+					transform: scale( 0 );
+					justify-content: center;
+					top: 0;
+					transition: 0.5s;
+
+					img {
+						align-self: center;
+						align-items: center;
+					}
+				}
+
+				a {
+					margin-bottom: 0;
+					position: absolute;
+					bottom: 5px;
+					background: #fff;
+					padding: 8px 15px;
+					border-radius: 50px;
+					color: $dark-color;
+					font-weight: 600;
+					text-transform: uppercase;
+					transition: 0.5s;
+				}
+			}
+
+		}
+	}
+}
+
+/* Responsive Css */
+@media only screen and ( max-width: 360px ) {
+	.productcategory {
+		.grid {
+			.grid-item {
+				.tag-comment {
+					.tagger {
+						figure {
+							position: static;
+						}
+					}
+				}
+			}
+		}
+	}
+}

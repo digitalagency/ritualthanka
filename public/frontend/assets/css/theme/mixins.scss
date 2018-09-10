@@ -1,0 +1,57 @@
+/* Mixins*/
+@mixin border-radius( $radius ) {
+	border-radius: $radius;
+}
+
+@mixin add-border( $size, $color, $position  ) {
+	@if $position == 'all' {
+		border: $size solid $color;
+	} @else if $position=='top' {
+		border-top: $size solid $color;
+	} @else if $position == 'bottom' {
+		border-bottom: $size solid $color;
+	} @else if $position == 'right' {
+		border-right: $size solid $color;
+	} @else if $position == 'left' {
+		border-left: $size solid $color;
+	} @else if $position == 'top-bottom' {
+		border-top: $size solid $color;
+		border-bottom: $size solid $color;
+	} @else if $position =='right-left' {
+		border-left: $size solid $color;
+		border-right: $size solid $color;
+	}
+}
+
+@mixin add-background( $color ) {
+	background: $color;
+}
+
+@function set-text-color( $color ) {
+	@if (lightness( $color) > 55% ) {
+		@return #1c1c1c;
+	} @else {
+		@return #fff;
+	}
+}
+
+/* Ripple Out */
+@-webkit-keyframes hvr-ripple-out {
+	100% {
+		top: -12px;
+		right: -12px;
+		bottom: -12px;
+		left: -12px;
+		opacity: 0;
+	}
+}
+
+@keyframes hvr-ripple-out {
+	100% {
+		top: -12px;
+		right: -12px;
+		bottom: -12px;
+		left: -12px;
+		opacity: 0;
+	}
+}
